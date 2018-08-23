@@ -1,6 +1,5 @@
 clear;
 load('You_dataset.mat');
-MU = 0.005;GAMMA=0.002;
 y = miRNA_disease_Y;
 
 K1 = [];
