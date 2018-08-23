@@ -1,6 +1,5 @@
 clear;
 load('You_dataset.mat');
-MU = 0.005;GAMMA=0.002;
 y_train = miRNA_disease_Y;
 [II,JJ] = find(miRNA_disease_Y == 1);
 K1 = [];
