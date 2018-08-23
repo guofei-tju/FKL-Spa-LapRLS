@@ -20,13 +20,13 @@ for fold = 1:nfolds
 	K1(:,:,3)=kernel_gip(y_train,1, 1);
 	K2(:,:,3)=kernel_gip(y_train,2, 1);
  
-	[weight_v1] = FKL_weights(K1,y_train,1,20000);
+	[weight_v1] = FKL_weights(K1,y_train,1,200);
 	K_COM1 = combine_kernels(weight_v1, K1);		
 
-	[weight_v2] = FKL_weights(K2,y_train,2,20000);
+	[weight_v2] = FKL_weights(K2,y_train,2,200);
 	K_COM2 = combine_kernels(weight_v2, K2);
 	
-	[F_1] = LapRLS(K_COM1,K_COM2,y_train, 2^(-4),40,1);
+	[F_1] = LapRLS(K_COM1,K_COM2,y_train, 2^(-5),20,1);
 	
 	y(test_idx)= F_1(test_idx);
 end
